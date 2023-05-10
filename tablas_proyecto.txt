@@ -1,0 +1,61 @@
+create table evento (
+	ID int primary key,
+	nombre varchar(30) not null,
+	fecha_inicio date,
+	fecha_fin date,
+	ID_Boleteria int,
+	codigo_Centro_de_Eventos int,
+	foreign key (ID_Boleteria) references boleteria,
+	foreign key (codigo_Centro_de_Eventos) references centro_de_eventos
+);
+
+create table centro_de_eventos(
+	codigo int primary key,
+	nombre varchar(30),
+	direccion varchar(30),
+	capacidad int,
+	codigo_ciudad int,
+	foreign key (codigo_ciudad) references ciudad
+);
+
+create table ciudad(
+	codigo int primary key, 
+	nombre varchar(30)
+);
+
+create table artista(
+	ID int primary key,
+	nombre varchar (30),
+	integrantes int,
+	genero varchar (30),
+	manager varchar (30)
+);
+
+create table asiste(
+	ID_artista int,
+	ID_evento int,
+	foreign key (ID_artista) references artista,
+	foreign key (ID_evento) references evento
+);
+
+create table boleteria(
+	ID int primary key,
+	nombre_entidad varchar(30),
+	cantidad int,
+	precio_max int,
+	precio_min int
+);
+
+create table patrocina(
+	ID_patrocinador int,
+	ID_evento int,
+	foreign key (ID_patrocinador) references patrocinador,
+	foreign key (ID_evento) references evento
+);
+
+create table patrocinador(
+	ID int primary key,
+	nombre varchar(30),
+	producto varchar(30)
+);
+ 
