@@ -20,7 +20,7 @@ create table artista(
 create table boleteria(
 	ID int primary key,
 	codigo_boleteria int,
-	nombre_entidad varchar(60),
+	nombre varchar(60),
 	cantidad int,
 	precio_max int,
 	precio_min int
@@ -45,9 +45,7 @@ create table evento (
 	nombre varchar(60) not null,
 	fecha_inicio date,
 	fecha_fin date,
-	ID_Boleteria int,
 	codigo_Centro_de_Eventos int,
-	foreign key (ID_Boleteria) references boleteria,
 	foreign key (codigo_Centro_de_Eventos) references centro_de_eventos
 );
 
