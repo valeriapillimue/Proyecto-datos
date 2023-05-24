@@ -19,6 +19,7 @@ create table artista(
 
 create table boleteria(
 	ID int primary key,
+	codigo_boleteria int,
 	nombre_entidad varchar(60),
 	cantidad int,
 	precio_max int,
