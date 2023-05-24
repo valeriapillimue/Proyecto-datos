@@ -1,25 +1,25 @@
 create table patrocinador(
 	ID int primary key,
 	nombre varchar(30),
-	producto varchar(30)
+	producto varchar(60)
 );
 
 create table ciudad(
 	codigo int primary key, 
-	nombre varchar(30)
+	nombre varchar(60)
 );
 
 create table artista(
 	ID int primary key,
-	nombre varchar (30),
+	nombre varchar (60),
 	integrantes int,
-	genero varchar (30),
-	manager varchar (30)
+	genero varchar (60),
+	manager varchar (60)
 );
 
 create table boleteria(
 	ID int primary key,
-	nombre_entidad varchar(30),
+	nombre_entidad varchar(60),
 	cantidad int,
 	precio_max int,
 	precio_min int
@@ -27,13 +27,13 @@ create table boleteria(
 
 create table empresa_promotora(
 	ID int primary key,
-	nombre varchar (30)
+	nombre varchar (60)
 );
 
 create table centro_de_eventos(
 	codigo int primary key,
-	nombre varchar(30),
-	direccion varchar(30),
+	nombre varchar(60),
+	direccion varchar(60),
 	capacidad int,
 	codigo_ciudad int,
 	foreign key (codigo_ciudad) references ciudad
@@ -41,7 +41,7 @@ create table centro_de_eventos(
 
 create table evento (
 	ID int primary key,
-	nombre varchar(30) not null,
+	nombre varchar(60) not null,
 	fecha_inicio date,
 	fecha_fin date,
 	ID_Boleteria int,
