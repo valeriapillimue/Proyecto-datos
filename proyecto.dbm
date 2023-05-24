@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.3" use-changelog="false" last-position="0,0" last-zoom="1" max-obj-count="8"
+	 default-schema="public" default-owner="postgres">
+<database name="new_database" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layer="0" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="evento" layer="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="22" y="962"/>
+	<column name="ID" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre" not-null="true">
+		<type name="varchar" length="60"/>
+	</column>
+	<column name="fecha_inicio">
+		<type name="date" length="0"/>
+	</column>
+	<column name="fecha_fin">
+		<type name="date" length="0"/>
+	</column>
+	<column name="codigo_Centro_de_Eventos">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="evento_pk" type="pk-constr" table="public.evento">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="patrocinador" layer="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="21" y="22"/>
+	<column name="ID" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="varchar" length="60"/>
+	</column>
+	<column name="producto">
+		<type name="varchar" length="60"/>
+	</column>
+	<constraint name="patrocinador_pk" type="pk-constr" table="public.patrocinador">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="ciudad" layer="0" collapse-mode="2" max-obj-count="2" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="22" y="162"/>
+	<column name="codigo" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="varchar" length="60"/>
+	</column>
+	<constraint name="ciudad_pk" type="pk-constr" table="public.ciudad">
+		<columns names="codigo" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="artista" layer="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="22" y="282"/>
+	<column name="ID" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="varchar" length="60"/>
+	</column>
+	<column name="integrantes">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="genero">
+		<type name="varchar" length="60"/>
+	</column>
+	<column name="manager">
+		<type name="varchar" length="60"/>
+	</column>
+	<constraint name="artista_pk" type="pk-constr" table="public.artista">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="boleteria" layer="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="22" y="462"/>
+	<column name="ID" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre_entidad">
+		<type name="varchar" length="60"/>
+	</column>
+	<column name="cantidad">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="precio_max">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="precio_min">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="boleteria_pk" type="pk-constr" table="public.boleteria">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="empresa_promotora" layer="0" collapse-mode="2" max-obj-count="2" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="22" y="640"/>
+	<column name="ID" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="varchar" length="60"/>
+	</column>
+	<constraint name="empresa_promotora_pk" type="pk-constr" table="public.empresa_promotora">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="centro_de_eventos" layer="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="22" y="762"/>
+	<column name="codigo" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="varchar" length="60"/>
+	</column>
+	<column name="direccion">
+		<type name="varchar" length="60"/>
+	</column>
+	<column name="capacidad">
+		<type name="integer" length="60"/>
+	</column>
+	<column name="codigo_ciudad">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="centro_de_eventos_pk" type="pk-constr" table="public.centro_de_eventos">
+		<columns names="codigo" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="codigo_Centro_de_Eventos" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.centro_de_eventos" table="public.evento">
+	<columns names="codigo_Centro_de_Eventos" ref-type="src-columns"/>
+	<columns names="codigo" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="codigo_ciudad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.ciudad" table="public.centro_de_eventos">
+	<columns names="codigo_ciudad" ref-type="src-columns"/>
+	<columns names="codigo" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_centro_de_eventos_ciudad" type="relfk" layer="0"
+	 src-table="public.centro_de_eventos"
+	 dst-table="public.ciudad" reference-fk="codigo_ciudad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_evento_centro_de_eventos" type="relfk" layer="0"
+	 src-table="public.evento"
+	 dst-table="public.centro_de_eventos" reference-fk="codigo_Centro_de_Eventos"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>
