@@ -1,6 +1,6 @@
 create table patrocinador(
 	ID int primary key,
-	nombre varchar(30),
+	nombre varchar(60),
 	producto varchar(60)
 );
 
