@@ -20,10 +20,12 @@ create table artista(
 create table boleteria(
 	ID int primary key,
 	codigo_boleteria int,
-	nombre varchar(60),
+	ID_evento varchar(60),
 	cantidad int,
 	precio_max int,
-	precio_min int
+	precio_min int,
+	foreign key (codigo_boleteria) references empresa_promotora,
+	foreign key (ID_evento) references evento
 );
 
 create table empresa_promotora(
