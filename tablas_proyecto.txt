@@ -17,17 +17,6 @@ create table artista(
 	manager varchar (60)
 );
 
-create table boleteria(
-	ID int primary key,
-	codigo_boleteria int,
-	ID_evento int,
-	cantidad int,
-	precio_max int,
-	precio_min int,
-	foreign key (codigo_boleteria) references empresa_promotora,
-	foreign key (ID_evento) references evento
-);
-
 create table empresa_promotora(
 	ID int primary key,
 	nombre varchar (60)
@@ -49,6 +38,17 @@ create table evento (
 	fecha_fin date,
 	codigo_Centro_de_Eventos int,
 	foreign key (codigo_Centro_de_Eventos) references centro_de_eventos
+);
+
+create table boleteria(
+	ID int primary key,
+	codigo_boleteria int,
+	ID_evento int,
+	cantidad int,
+	precio_max int,
+	precio_min int,
+	foreign key (codigo_boleteria) references empresa_promotora,
+	foreign key (ID_evento) references evento
 );
 
 create table asiste(
