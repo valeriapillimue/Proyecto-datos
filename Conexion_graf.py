@@ -74,8 +74,8 @@ try:
     rows = cursor.fetchall()
     app = Dash(__name__)
     
-    fig11 = px.bar(rows, x=0, y=1, title="Uso de centro de eventos", labels={'x': 'X-axis', 'y': 'Y-axis'}, height=800, width=2000)
-    fig22 = px.pie(rows, values=1, names=0, title="Ingresos por año", labels={'x': 'X-axis', 'y': 'Y-axis'}, height=800, width=900)
+    fig11 = px.bar(rows, x=0, y=1, title="Uso de centro de eventos", labels={'x': 'X-axis', 'y': 'Y-axis'}, height=600, width=1000)
+    fig12 = px.pie(rows, values=1, names=0, title="Ingresos por año", labels={'x': 'X-axis', 'y': 'Y-axis'}, height=600, width=700)
 
 
     cursor = connection.cursor()
@@ -84,7 +84,7 @@ try:
     rows2 = cursor.fetchall()
     app = Dash(__name__)
     
-    fig12 = px.bar(rows2, x=0, y=1, title="Asistencia de artistas a eventos", labels={'x': 'X-axis', 'y': 'Y-axis'}, height=800, width=2000)
+    fig21 = px.bar(rows2, x=0, y=1, title="Asistencia de artistas a eventos", labels={'x': 'X-axis', 'y': 'Y-axis'}, height=800, width=2000)
 
     cursor = connection.cursor()
     cursor.execute('''select e.nombre , count(p.ID_patrocinador) as ct_patrocinadores from patrocina as p inner join evento as e on p.ID_evento = e.ID
@@ -92,7 +92,7 @@ try:
     rows3 = cursor.fetchall()
     app = Dash(__name__)
     
-    fig13 = px.bar(rows3, x=0, y=1, title="Eventos patrocinados", labels={'x': 'X-axis', 'y': 'Y-axis'}, height=800, width=2000)
+    fig31 = px.bar(rows3, x=0, y=1, title="Eventos patrocinados", labels={'x': 'X-axis', 'y': 'Y-axis'}, height=800, width=2000)
 
 
     cursor = connection.cursor()
@@ -101,41 +101,39 @@ try:
     rows4 = cursor.fetchall()
     app = Dash(__name__)
     
-    fig14 = px.bar(rows4, x=0, y=1, title="Boleteria", labels={'x': 'X-axis', 'y': 'Y-axis'}, height=800, width=2000)
+    fig41 = px.bar(rows4, x=0, y=1, title="Boleteria", labels={'x': 'X-axis', 'y': 'Y-axis'}, height=800, width=2000)
     
-    colors={
-        'background': '#66E2C2'    
-    }
     app.layout = html.Div(children=[
-        html.Title(children = "Conciertos"),
-        html.H1(children='Gráfico Edición Cantidad'),
-        html.Div(children='''Dash: Aplicación para graficar datos'''),
-        html.Div(children='Diagrama de barras:', style={'fontSize': 20}),
-        html.Div(style={'display': 'flex', 'justify-content': 'center', 'align-items': 'center'},
+        html.H1(children='Conciertos/Eventos Colombia 2023', style={'display': 'flex', 'justify-content': 'center', 'align-items': 'center', 'fontSize': 50}),
+        html.H1(children='aaaaaaaa', style={'fontSize': 30, 'color': 'white'}),
+        html.H2(children='A lo largo del año 2023 se han realizado diversos conciertos/eventos en Colombia que cuentan con una gran cantidad de artistas y con esto una gran cantidad de audiencia, lo cual da un buen indicio para la economia del pais asi como un indicador de una próspera escena musical. Por otro lado, el albergar una gran cantidad de eventos ocasiona que se necesite una infraestructura adecuada que pueda dar un espacio agradable para los espectadores y los artistas, por lo que podemos observar una gran cantidad de centro de eventos en las diversas ciudades del pais que albergaron dichos eventos'),
+        #html.Div(children='Diagrama de barras:', style={'fontSize': 20}),
+        html.Div(style={'display': 'flex', 'justify-content': 'left', 'align-items': 'left'},
             children=dcc.Graph(
             id='Barras-Cat',
             figure=fig11
-        )),
+            )
+        ),
         html.Div(children='Diagrama de pie:', style={'fontSize': 20}),
         html.Div(style={'display': 'flex', 'justify-content': 'center', 'align-items': 'center'},
             children=dcc.Graph(
             id='Pie-An',
-            figure=fig22
-        )),
-        html.Div(style={'display': 'flex', 'justify-content': 'center', 'align-items': 'center'},
-            children=dcc.Graph(
-            id='Barras-Cat',
             figure=fig12
         )),
         html.Div(style={'display': 'flex', 'justify-content': 'center', 'align-items': 'center'},
             children=dcc.Graph(
             id='Barras-Cat',
-            figure=fig13
+            figure=fig21
         )),
         html.Div(style={'display': 'flex', 'justify-content': 'center', 'align-items': 'center'},
             children=dcc.Graph(
             id='Barras-Cat',
-            figure=fig14
+            figure=fig31
+        )),
+        html.Div(style={'display': 'flex', 'justify-content': 'center', 'align-items': 'center'},
+            children=dcc.Graph(
+            id='Barras-Cat',
+            figure=fig41
         )),
         html.H1(children='Seccion de discusion'),
         html.H2(children='Santiago: '),
@@ -149,4 +147,3 @@ except Exception as ex:
 finally:
     connection.close()
     print("conexion finalizada")
-
