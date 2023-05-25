@@ -71,41 +71,6 @@ insert into artista values(55, 'sky rompiendo', 1, 'Regueton', 'Juan Diego Medin
 insert into artista values(56, 'the martinez brothers', 2, 'Tech house', 'Shauna Slevin');
 
 
-insert into boleteria values(1, 1, 'neo city - the link', 10643, 650000, 150000);
-insert into boleteria values(2, 2, 'opeth en concierto', 2675, 200000, 140000);
-insert into boleteria values(3, 0, 'depresion sonora', 0, 0, 0);
-insert into boleteria values(4, 0, 'tosca (opera de Giacomo Puccini.) ', 0, 0, 0);
-insert into boleteria values(5, 1, 'suena vol. 1', 12163, 1000000, 180000);
-insert into boleteria values(6, 3, 'the world tour mothley crue y def leppard', 0, 546000, 352000);
-insert into boleteria values(7, 3, 'big time rush: forever tour', 0, 0, 0);
-insert into boleteria values(8, 1, 'joaquin sabina: contra todo pronostico', 9822, 559000, 99000);
-insert into boleteria values(9, 1, 'miguel mateos 40 años', 6435, 500000, 99000);
-insert into boleteria values(10, 0, 'deafheaven', 0, 0, 0);
-insert into boleteria values(11, 1, 'romeo santos formula vol. 3 la gira', 0, 1200000, 200000);
-insert into boleteria values(12, 2, 'una noche con lauren jauregui', 2852, 139000, 139000);
-insert into boleteria values(13, 4, 'festival pa gozar y cantar - bogotá', 40643, 0, 0);
-insert into boleteria values(14, 5, 'imagine dragons', 0, 577000, 132000);
-insert into boleteria values(15, 1, 'paramore', 0, 450000, 100000);
-insert into boleteria values(16, 1, 'alejandro fernandez', 3234, 829000, 160000);
-insert into boleteria values(17, 1, 'vicentico', 6434, 400000, 130000);
-insert into boleteria values(18, 1, 'paloma san basilio "te lo digo con musica" - bogotá', 1288, 510000, 240000);
-insert into boleteria values(19, 1, 'paul anka', 6435, 1200000, 300000);
-insert into boleteria values(20, 1, 'natalia jimenez 20 años - antologia tour', 0, 350000, 125000);
-insert into boleteria values(21, 1, 'alejandro sanz #la gira', 11498, 550000, 102000);
-insert into boleteria values(22, 1, 'hombres g 40 aniversario', 11243, 499000, 114000);
-insert into boleteria values(23, 2, 'monsters of rock', 33416, 750000, 189000);
-insert into boleteria values(24, 1, 'santiago cruz: despues de la tormenta tour', 6355, 299000, 99000);
-insert into boleteria values(25, 6, 'apocalyptica', 0, 549999, 114000);
-insert into boleteria values(26, 2, 'aterciopelados: el dorado en vivo', 3575, 199000, 114000);
-insert into boleteria values(27, 1, 'onlyoneof', 602, 388000, 170000);
-insert into boleteria values(28, 1, 'paloma san basilio "te lo digo con musica" - medellín', 1702, 450000, 270000);
-insert into boleteria values(29, 1, 'andrés cepeda la ruta púrpura - medellín', 1356, 350000, 150000);
-insert into boleteria values(30, 1, 'natalia jimenez 20 años - antologia tour', 1702, 420000, 195000);
-insert into boleteria values(31, 4, 'el choli se muda a medellín ', 40951, 0, 0);
-insert into boleteria values(32, 1, 'metro concierto de conciertos', 22863, 22500000, 416000);
-insert into boleteria values(33, 4, 'la solar cartagena', 2100, 0, 0);
-
-
 insert into empresa_promotora values(0, 'NN');
 insert into empresa_promotora values(1, 'tuboleta');
 insert into empresa_promotora values(2, 'entradas amarillas');
@@ -166,6 +131,43 @@ insert into evento values(30, 'natalia jimenez', '23/03/2023', '23/03/2023', 13)
 insert into evento values(31, 'el choli se muda a medellin', '25/02/2023', '25/02/2023', 14);
 insert into evento values(32, 'metro concierto de conciertos', '18/02/2023', '18/02/2023', 15);
 insert into evento values(33, 'la solar cartagena', '07/01/2023', '07/01/2023', 16);
+
+
+
+insert into boleteria values(1, 1, 1, 10643, 650000, 150000);
+insert into boleteria values(2, 2, 2, 2675, 200000, 140000);
+insert into boleteria values(3, 0, 3, 0, 0, 0);
+insert into boleteria values(4, 0, 4, 0, 0, 0);
+insert into boleteria values(5, 1, 5, 12163, 1000000, 180000);
+insert into boleteria values(6, 3, 6, 0, 546000, 352000);
+insert into boleteria values(7, 3, 7, 0, 0, 0);
+insert into boleteria values(8, 1, 8, 9822, 559000, 99000);
+insert into boleteria values(9, 1, 9, 6435, 500000, 99000);
+insert into boleteria values(10, 0, 10, 0, 0, 0);
+insert into boleteria values(11, 1, 11, 0, 1200000, 200000);
+insert into boleteria values(12, 2, 12, 2852, 139000, 139000);
+insert into boleteria values(13, 4, 13, 40643, 0, 0);
+insert into boleteria values(14, 5, 14, 0, 577000, 132000);
+insert into boleteria values(15, 1, 15, 0, 450000, 100000);
+insert into boleteria values(16, 1, 16, 3234, 829000, 160000);
+insert into boleteria values(17, 1, 17, 6434, 400000, 130000);
+insert into boleteria values(18, 1, 18, 1288, 510000, 240000);
+insert into boleteria values(19, 1, 19, 6435, 1200000, 300000);
+insert into boleteria values(20, 1, 20, 0, 350000, 125000);
+insert into boleteria values(21, 1, 21, 11498, 550000, 102000);
+insert into boleteria values(22, 1, 22, 11243, 499000, 114000);
+insert into boleteria values(23, 2, 23, 33416, 750000, 189000);
+insert into boleteria values(24, 1, 24, 6355, 299000, 99000);
+insert into boleteria values(25, 6, 25, 0, 549999, 114000);
+insert into boleteria values(26, 2, 26, 3575, 199000, 114000);
+insert into boleteria values(27, 1, 27, 602, 388000, 170000);
+insert into boleteria values(28, 1, 28, 1702, 450000, 270000);
+insert into boleteria values(29, 1, 29, 1356, 350000, 150000);
+insert into boleteria values(30, 1, 30, 1702, 420000, 195000);
+insert into boleteria values(31, 4, 31, 40951, 0, 0);
+insert into boleteria values(32, 1, 32, 22863, 22500000, 416000);
+insert into boleteria values(33, 4, 33, 2100, 0, 0);
+
 
 
 insert into asiste values(1, 1);
