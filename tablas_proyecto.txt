@@ -44,9 +44,9 @@ create table boleteria(
 	ID int primary key,
 	codigo_boleteria int,
 	ID_evento int,
-	cantidad int,
-	precio_max int,
-	precio_min int,
+	cantidad numeric(15,2),
+	precio_max numeric(15,2),
+	precio_min numeric(15,2),
 	foreign key (codigo_boleteria) references empresa_promotora,
 	foreign key (ID_evento) references evento
 );
